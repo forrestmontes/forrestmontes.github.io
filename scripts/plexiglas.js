@@ -10,8 +10,8 @@ function setup() {
 
 async function drawClusters() {
   for (let i = 0; i < clusters; i++) {
-    const x = random(10, width - 10);
-    const y = random(10, height - 10);
+    const x = random(windowWidth);
+    const y = random(windowHeight);
     drawBalls(x, y);
     await delay(1000);
   }
