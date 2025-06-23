@@ -13,19 +13,19 @@ async function drawClusters() {
     const x = random(10, width - 10);
     const y = random(10, height - 10);
     drawBalls(x, y);
-    await delay(250);
+    await delay(1000);
   }
 }
 
 async function drawBalls(x, y) {
   for (let i = 0; i < balls; i++) {
     drawBall(
-      random(x - 50, x + 50),
-      random(y - 50, y + 50),
+      random(x - 100, x + 100),
+      random(y - 100, y + 100),
       random(1, 500),
       random(1, 500)
     );
-    await delay(125);
+    await delay(250);
   }
 }
 
