@@ -38,3 +38,7 @@ function drawBall(x, y, w, h) {
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
