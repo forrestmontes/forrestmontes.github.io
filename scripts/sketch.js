@@ -61,7 +61,11 @@ function drawDot(x1, y1, x2, y2, segment) {
 
 async function drawFlowers() {
   for (let i = 0; i < flowers; i++) {
-    drawFlower(random(10, 390), random(10, 690), random(1, 50));
+    drawFlower(
+      random(10, windowWidth - 10),
+      random(10, windowHeight - 10),
+      random(1, 50)
+    );
     await delay(1000);
   }
 }
