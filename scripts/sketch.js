@@ -1,4 +1,4 @@
-const lines = 60;
+const lines = 120;
 const segments = 5;
 const flowers = lines;
 
