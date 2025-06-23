@@ -1,4 +1,4 @@
-const clusters = 120;
+const clusters = 30;
 const balls = 5;
 
 function setup() {
@@ -30,7 +30,7 @@ async function drawBalls(x, y) {
 }
 
 function drawBall(x, y, w, h) {
-  stroke(random(255), random(255), random(255), 128);
+  stroke(random(255), random(255), random(255), random(64));
   fill(random(255), random(255), random(255), 128);
   ellipse(x, y, w, h);
 }
