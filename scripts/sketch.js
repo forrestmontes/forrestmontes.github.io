@@ -3,10 +3,14 @@ const segments = 5;
 const flowers = lines;
 
 function setup() {
-  createCanvas(400, 700);
+  createCanvas(windowWidth, windowHeight);
   background(255);
+  animate();
+}
+
+function animate() {
   noLoop();
-  drawFlower(width / 2, height / 2, 100);
+  drawFlower(windowWidth / 2, windowHeight / 2, 100);
   drawFlowers();
   drawDottedLines();
 }
@@ -20,10 +24,10 @@ async function drawDottedLines() {
 }
 
 async function drawLine() {
-  const x1 = int(random(10, 390));
-  const y1 = int(random(10, 690));
-  const x2 = int(random(10, 390));
-  const y2 = int(random(10, 690));
+  const x1 = int(random(10, windowWidth - 10));
+  const y1 = int(random(10, windowHeight - 10));
+  const x2 = int(random(10, windowWidth - 10));
+  const y2 = int(random(10, windowHeight - 10));
   stroke(100, 100, 255, 50);
   line(x1, y1, x2, y2);
 
@@ -80,4 +84,8 @@ function drawFlower(x, y, size) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
