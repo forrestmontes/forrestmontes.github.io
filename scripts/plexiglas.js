@@ -1,4 +1,4 @@
-const clusters = 300;
+const clusters = 120;
 const balls = 5;
 
 function setup() {
