@@ -25,7 +25,7 @@ async function drawBalls(x, y) {
       random(1, 500),
       random(1, 500)
     );
-    await delay(250);
+    await delay(1000);
   }
 }
 
