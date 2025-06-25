@@ -5,20 +5,38 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
   noLoop();
+  drawRectSine();
   drawClusters();
   drawSine();
 }
 
-function drawSine() {
-  noStroke();
-  fill(255, 0, 0, 128);
+function drawRectSine() {
+  for (let x = 0; x <= width; x += 20) {
+    strokeWeight(1);
+    stroke(255, 165, 0, 128);
+    const r = 255;
+    const g = (sin(x / 100) + 1) * 127.5;
+    const b = (sin(x / 100) + 1) * 127.5;
+    fill(r, g, b);
+    rect(x, height / 3, 20, 20);
+  }
+}
+
+async function drawSine() {
   for (let x = 0; x <= width; x++) {
-    let y = sin(x / 100) * 100;
-    //console.log(`(${x}, ${y})`);
-    for (let offset = -100; offset <= 100; offset += 10) {
-      ellipse(x + offset, y + height / 2 + offset, 2);
+    const y = sin(x / 100) * 100;
+
+    for (let offset = -100; offset <= 100; offset += 20) {
+      drawOffest(x, y, offset);
+      //await delay(1);
     }
   }
+}
+
+function drawOffest(x, y, offset) {
+  noStroke();
+  fill(255, 255, 128, 16);
+  ellipse(x + offset, y + height / 2 + offset, 15);
 }
 
 async function drawClusters() {
@@ -26,7 +44,7 @@ async function drawClusters() {
     const x = random(windowWidth);
     const y = random(windowHeight);
     drawBalls(x, y);
-    await delay(4000);
+    //await delay(4000);
   }
 }
 
@@ -38,7 +56,7 @@ async function drawBalls(x, y) {
       random(1, 200),
       random(1, 200)
     );
-    await delay(1000);
+    //await delay(1000);
   }
 }
 
