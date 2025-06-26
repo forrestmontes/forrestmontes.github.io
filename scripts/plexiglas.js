@@ -12,13 +12,20 @@ function setup() {
 
 function drawRectSine() {
   for (let x = 0; x <= width; x += 20) {
+    // The calculation below gives us a range of (0, 255)
+    const weirdNumber = (sin(x * 0.01) + 1) * 127.5;
+    const r = 255;
+    const g = weirdNumber;
+    const b = 0;
+
+    console.log(`x: ${x} f(x): ${weirdNumber}`);
+
     strokeWeight(1);
     stroke(255, 165, 0, 128);
-    const r = 255;
-    const g = (sin(x / 100) + 1) * 127.5;
-    const b = (sin(x / 100) + 1) * 127.5;
     fill(r, g, b);
-    rect(x, height / 3, 20, 20);
+    rect(x, height / 3, 20, 30);
+    rect(x, height / 2, 20, 30);
+    rect(x, (height * 2) / 3, 20, 30);
   }
 }
 
