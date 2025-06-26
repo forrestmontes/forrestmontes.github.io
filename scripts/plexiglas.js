@@ -13,7 +13,7 @@ function setup() {
 function drawRectSine() {
   for (let x = 0; x <= width; x += 20) {
     // The calculation below gives us a range of (0, 255)
-    const weirdNumber = (sin(x * 0.01) + 1) * 127.5;
+    const weirdNumber = (sin(x / 90) + 1) * 127.5;
     const r = 255;
     const g = weirdNumber;
     const b = 0;
